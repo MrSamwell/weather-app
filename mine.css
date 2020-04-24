@@ -1,0 +1,13 @@
+.is-horizontal-centered {
+    justify-content: center;
+  }
+
+.has-background-grey-lighterer{
+  background-color: hsl(0, 0%, 90%);
+}
+
+@media screen and (min-width:1000px){
+  .is-centered-on-desktop{
+    justify-content: center;
+  }
+}
