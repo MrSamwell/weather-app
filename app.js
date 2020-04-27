@@ -30,7 +30,7 @@ function getWeather(){
         setInterfaceValues()})
 
     .catch(err => alert("Wrong something!"))
-    }, 10);
+    }, 100);
     
     
 }
