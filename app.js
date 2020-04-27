@@ -9,6 +9,7 @@ let owmdata;
 function onPositionReceived(position){
     this.lat = position.coords.latitude;
     this.lon = position.coords.longitude; 
+    this.getWeather();
 }
 
 window.onload = function() {
@@ -22,8 +23,6 @@ function onPositionNotReceived(positionError){
 function getLocation(){
    if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(onPositionReceived, onPositionNotReceived);
-        
-        this.getWeather();
    }
 }
 
@@ -33,7 +32,7 @@ function getWeather(){
         .then(response => response.json())
         .then(data => {this.owmdata = data;
         setInterfaceValues()})
-    .catch(err => alert("Wrong something!"))
+    .catch(err => alert("Wrong something!!!"))
     }, 100);
 }
 
