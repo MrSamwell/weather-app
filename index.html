@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <link rel="stylesheet" href="mine.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
   </head>
   <body class="has-background-light is-marginless is-paddingless">
   <section class="section has-background-light" style="padding: 24px;">
@@ -21,7 +22,7 @@
 
           <div class="columns">
             <div class="column is-centered is-full">
-              <input class="title is-size-4 has-background-light has-text-centered" value="Name of the city" placeholder="Name of the City" style="border: none;">
+              <h1 class="title is-size-3 has-background-light has-text-centered" id="cityName">City name</h1>
             </div>
           </div>
         
@@ -34,8 +35,8 @@
             </div>
             <div class="column"></div>
           </div>
-          <h1 class="title is-size-1">23ºC</h1>
-          <h3 class="subtitle">Mostly cloudy</h3>
+          <h1 class="title is-size-1" id="currentTemper">23ºC</h1>
+          <h3 class="subtitle" id="descrip">Mostly cloudy</h3>
         </div>
       </div>
       <div class="column"></div>
@@ -67,5 +68,7 @@
           </div>
         </footer>
   </section>
-  </body>
+
+    <script src="app.js"></script>
+</body>
 </html>
