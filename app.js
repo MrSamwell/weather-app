@@ -7,15 +7,10 @@ let currentTemper = document.getElementById('currentTemper');
 let owmdata;
 function onPositionReceived(position){
     this.lat = position.coords.latitude;
-    this.lon = position.coords.longitude;
+    this.lon = position.coords.longitude; 
 }
-
 window.onload = function() {
     this.getWeather();
-    setTimeout(function(){
-        this.setInterfaceValues();
-    },1000)
-    
 }
 function onPositionNotReceived(positionError){
     console.log(positionError)
@@ -31,7 +26,8 @@ function getWeather(){
     setTimeout(function(){
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lon}&appid=bb40a37cfe32d49bd09d9622ada1561a`)
         .then(response => response.json())
-        .then(data => this.owmdata = data)
+        .then(data => {this.owmdata = data;
+        setInterfaceValues()})
 
     .catch(err => alert("Wrong something!"))
     }, 10);
