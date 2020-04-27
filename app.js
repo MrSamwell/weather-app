@@ -24,6 +24,9 @@ function getLocation(){
 function getWeather(){
     getLocation();
     setTimeout(function(){
+        
+        alert(this.lat);
+        alert(this.lon);
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${this.lat}&lon=${this.lon}&appid=bb40a37cfe32d49bd09d9622ada1561a`)
         .then(response => response.json())
         .then(data => {this.owmdata = data;
