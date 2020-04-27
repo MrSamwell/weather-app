@@ -13,7 +13,6 @@ function onPositionReceived(position){
 
 window.onload = function() {
     getLocation();
-    this.getWeather();
 }
 
 function onPositionNotReceived(positionError){
@@ -23,6 +22,8 @@ function onPositionNotReceived(positionError){
 function getLocation(){
    if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(onPositionReceived, onPositionNotReceived);
+        
+        this.getWeather();
    }
 }
 
