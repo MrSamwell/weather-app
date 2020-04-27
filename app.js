@@ -6,18 +6,18 @@ let descrip = document.getElementById('descrip');
 let currentTemper = document.getElementById('currentTemper');
 let owmdata;
 
-function onPositionReceived(position){
-    this.lat = position.coords.latitude;
-    this.lon = position.coords.longitude; 
-    this.getWeather();
-}
 
 window.onload = function() {
     getLocation();
 }
 
+function onPositionReceived(position){
+    this.lat = position.coords.latitude;
+    this.lon = position.coords.longitude; 
+    this.getWeather();
+}
 function onPositionNotReceived(positionError){
-    alert('Position error');
+    alert(positionError);
 }
 
 function getLocation(){
