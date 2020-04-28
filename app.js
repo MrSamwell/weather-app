@@ -36,6 +36,14 @@ new Vue({
             
         },
         timeConverter: function (UNIX_timestamp){
+            var weekday=new Array(7);
+            weekday[1]="Monday";
+            weekday[2]="Tuesday";
+            weekday[3]="Wednesday";
+            weekday[4]="Thursday";
+            weekday[5]="Friday";
+            weekday[6]="Saturday";
+            weekday[0]="Sunday";
             var a = new Date(UNIX_timestamp * 1000);
             var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
             var year = a.getFullYear();
@@ -44,8 +52,9 @@ new Vue({
             var hour = a.getHours();
             var min = a.getMinutes();
             var sec = a.getSeconds();
+            var day = a.getDay();
             var time = date + ' ' + month;
-            return time;
+            return weekday[day];
           },
           kelvinToCelsius(kelvin){
               return Math.round(kelvin - 273.15);

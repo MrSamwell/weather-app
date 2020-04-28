@@ -8,6 +8,7 @@
 
 @media screen and (min-width:1000px){
   .is-centered-on-desktop{
-    justify-content: cent;
+    justify-content: center;
   }
 }
+
