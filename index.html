@@ -37,8 +37,8 @@
             </div>
             <div class="column"></div>
           </div>
-          <h1 class="title is-size-1" id="currentTemper">{{Math.round(owmdata.main.temp - 273.15) + 'ºC'}}</h1>
-          <h3 class="subtitle" id="descrip">{{this.owmdata.weather[0].description}}</h3>
+          <h1 class="title is-size-1" id="currentTemper">{{kelvinToCelsius(owmdata.main.temp) + 'ºC'}}</h1>
+          <h3 class="subtitle" id="descrip">{{this.owmdata.weather[0].main}}</h3>
         </div>
       </div>
       <div class="column"></div>
@@ -47,16 +47,16 @@
       <div class="column is-full"><h1 class="subtitle is-size-6 has-text-grey-light is-hidden-desktop">Next days</h1></div>
     </div>
     <div class="columns is-mobile is-centered-on-desktop" style="overflow-x: auto;">
-        <div class="column is-5 has-background-grey-lighterer has-text-dark is-flex is-horizontal-centered" style=" max-width: 200px; margin: 0 10px;">
+        <div class="column is-5 has-background-grey-lighterer has-text-dark is-flex is-horizontal-centered" style=" max-width: 200px; margin: 0 10px;" v-for="(i,index) in owmonecall.daily">
           <div class="has-text-centered">
-            <h1 class="is-size-6">Amanhã</h1>
-            <h1 class="subtitle is-size-8"></h1>
+            <h1 class="is-size-6"></h1>
+            <h1 class="subtitle is-size-8">{{timeConverter(owmonecall.daily[index].dt)}}</h1>
             <figure class="image is-64x64">
               <img src="img/021-cloudy-1.png" class="">
             </figure>
             <h1 class="subtitle is-size-8"></h1>
-            <h2 class="has-text-info">-%</h2>
-            <h2 class="subtitle has-text-dark">-º <span class="has-text-grey">-º</span></h2>
+            <h2 class="has-text-info">{{owmonecall.daily[index].humidity + "%"}}</h2>
+            <h2 class="subtitle has-text-dark">{{ kelvinToCelsius(owmonecall.daily[index].temp.max)+'º '}}<span class="has-text-grey">{{ kelvinToCelsius(owmonecall.daily[index].temp.min)+'º'}}</span></h2>
           </div>
         </div>
         </div>

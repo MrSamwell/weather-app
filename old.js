@@ -4,7 +4,7 @@ let apiKey = '962fb92318ef083c21b54cb6711d4e28' ;
 let cityName = document.getElementById('cityName');
 let descrip = document.getElementById('descrip');
 let currentTemper = document.getElementById('currentTemper');
-let owmdata: '';
+let owmdata;
 
 
 window.onload = function() {
