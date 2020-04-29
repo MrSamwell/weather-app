@@ -58,7 +58,15 @@ new Vue({
           },
           kelvinToCelsius(kelvin){
               return Math.round(kelvin - 273.15);
-          }
+          },
+          sourceImage(){
+              return `img/${this.owmdata.weather[0].icon}.png`
+          },
+          sourceImageOc(index){
+            return `img/${this.owmonecall.daily[index].weather[0].icon}.png`
+        }
+          
+
        
     },
     mounted: function(){

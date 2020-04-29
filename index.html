@@ -32,7 +32,7 @@
             <div class="column"></div>
             <div class="column">
               <figure class="image is-128x128">
-              <img src="img/021-cloudy-1.png">
+              <img :src="sourceImage()">
               </figure>
             </div>
             <div class="column"></div>
@@ -52,7 +52,7 @@
             <h1 class="is-size-6"></h1>
             <h1 class="subtitle is-size-8">{{timeConverter(owmonecall.daily[index].dt)}}</h1>
             <figure class="image is-64x64">
-              <img src="img/021-cloudy-1.png" class="">
+              <img :src="sourceImageOc(index)">
             </figure>
             <h1 class="subtitle is-size-8"></h1>
             <h2 class="has-text-info">{{owmonecall.daily[index].humidity + "%"}}</h2>
